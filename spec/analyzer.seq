@@ -1,6 +1,7 @@
 dicttokz	nil	# Gen:   Convert input to token list.
 nlp	doc	# comment
 nlp	funs	# comment
+nlp	KBFuncs	# comment
 nlp	posfuns	# comment
 nlp	semfuns	# comment
 nlp	qsemfuns	# comment
@@ -132,3 +133,4 @@ nlp	ne_out	# comment
 nlp	ne_xml	# comment
 nlp	fin	# comment
 nlp	buff_out	# comment
+nlp	displayKB	# comment
