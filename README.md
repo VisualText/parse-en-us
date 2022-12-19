@@ -1,7 +1,7 @@
 # Full USA English Parser
 
-This is a full English Parser for USA English created by Amnon Meyers over the period of 20 years.
+This is a full English Parser for USA English created by Amnon Meyers over the period of 20 years. It uses the older Wordnet dictionary for parts of speech.
 
-## Version 2 Coming
+## Wiktionary Update
 
-Version 2 of the English US will is being deveoloped which will be reorganized with place holders for using the parser for specific domains and tasks.
+Sometime in 2023, the plan is to have the English Wiktionary parsed in order to generate a much more ample English dictionary.
