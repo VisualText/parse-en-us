@@ -1,6 +1,6 @@
 # Full USA English Parser
 
-This is a full English Parser for USA English created by Amnon Meyers;
+This is a full English Parser for USA English created by Amnon Meyers
 
 It was developed over the period of many years in a bottom up manner. It uses the older Wordnet dictionary for parts of speech and uses only syntax, no semantics.
 
