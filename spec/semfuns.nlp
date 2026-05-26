@@ -302,7 +302,11 @@ if (L("nsenses"))	# 02/08/11 AM.
 if (L("matchcons") = pnvar(L("v"),"MATCHCONS"))		# 03/17/14 AM.
   {
   pnreplaceval(L("vg"),"MATCHCONS",L("matchcons"));	# 03/17/14 AM.
-  PRETTYCONShier(L("matchcons"),G("mhdump"));
+  # PRETTYCONShier(L("matchcons"),G("mhdump"));	# Undefined function.
+  # The interpreter tolerated this (the if-condition is rarely true,
+  # so the call rarely fired), but the C++ compile path can't resolve
+  # the symbol at link time and the build fails. Commented out pending
+  # a decision on whether to define the function or drop the block.
   }
 }
 
