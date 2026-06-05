@@ -23,8 +23,9 @@ jobs:
       fail-fast: false
       matrix:
         repo:
-          - analyzers          # embeds parse-en-us at path parse-en-us
-          - visualtext-files   # embeds parse-en-us at path analyzers/parse-en-us
+          - analyzers           # embeds parse-en-us at path parse-en-us
+          - analyzer-templates  # embeds parse-en-us at path parse-en-us
+          - visualtext-files    # embeds parse-en-us at path analyzers/parse-en-us
     steps:
       - name: Trigger ${{ matrix.repo }}
         uses: peter-evans/repository-dispatch@v2
