@@ -1,136 +1,136 @@
 dicttokz	nil	# Gen:   Convert input to token list.
-nlp	doc	# comment
-nlp	funs	# comment
-nlp	KBFuncs	# comment
-nlp	posfuns	# comment
-nlp	semfuns	# comment
-nlp	qsemfuns	# comment
-nlp	domfuns	# comment
-nlp	xmlfns	# comment
-nlp	ini	# comment
-nlp	kbload	# comment
-nlp	kb_geo	# comment
-nlp	kb_onto	# comment
-nlp	tag50	# comment
-nlp	tag100	# comment
-nlp	tags100	# comment
-nlp	zap100	# comment
-nlp	LINES_nosp	# comment
-nlp	pre_100	# comment
-nlp	pre_200	# comment
-nlp	pre_300	# comment
-nlp	pre_400	# comment
-nlp	pre_500	# comment
-nlp	pre_600	# comment
-nlp	pre_zap	# comment
-nlp	pre_zap1	# comment
-nlp	pre_zap2	# comment
-nlp	pre_badeos	# comment
-nlp	pre_form	# comment
-nlp	CYCLE_0	# comment
-nlp	qline100	# comment
-nlp	textzone50	# comment
-nlp	textzone100	# comment
-nlp	zaplines	# comment
-nlp	CYCLE_1	# comment
-nlp	tok10	# comment
-nlp	tok25	# comment
-nlp	tok50	# comment
-nlp	quotes100	# comment
-nlp	tok100	# comment
-nlp	punct100	# comment
-nlp	punct200	# comment
-nlp	dom100	# comment
-nlp	fnretok	# comment
-nlp	date	# comment
-nlp	feat	# comment
-nlp	feat100	# comment
-nlp	city	# comment
-nlp	country	# comment
-nlp	location100	# comment
-nlp	fnword	# comment
-nlp	num	# comment
-nlp	common	# comment
-nlp	dictfix	# comment
-nlp	lookup_word	# comment
-nlp	lex_unambig	# comment
-nlp	tok150	# comment
-nlp	dom150	# comment
-rec	tok175	# comment
-nlp	entity100	# comment
-nlp	tok200	# comment
-nlp	lex_unambig2	# comment
-nlp	hilite_alpha	# comment
-nlp	dom175	# comment
-nlp	caps50	# comment
-nlp	incap100	# comment
-nlp	dom200	# comment
-nlp	sent50	# comment
-nlp	sent100	# comment
-nlp	sent125	# comment
-rec	pos10	# comment
-rec	inc100	# comment
-nlp	inc300	# comment
-nlp	pos25	# comment
-rec	pos50	# comment
-nlp	study100	# comment
-nlp	pos75	# comment
-nlp	mhbv100	# comment
-nlp	dqan100	# comment
-nlp	phr50	# comment
-nlp	pos100	# comment
-nlp	caps100	# comment
-rec	pos200	# comment
-nlp	dqan200	# comment
-nlp	pos300	# comment
-nlp	seg100	# comment
-nlp	qseg100	# comment
-nlp	sent200	# comment
-nlp	qconj100	# comment
-nlp	qseg125	# comment
-nlp	qconj200	# comment
-rec	qsent50	# comment
-rec	pos400	# comment
-rec	qclause50	# comment
-nlp	clause100	# comment
-nlp	clause200	# comment
-nlp	clause300	# comment
-nlp	qseg150	# comment
-nlp	sent250	# comment
-nlp	clause400	# comment
-nlp	sent300	# comment
-nlp	qsent75	# comment
-rec	phr100	# comment
-nlp	qseg200	# comment
-nlp	qclause200	# comment
-nlp	qclause75	# comment
-nlp	qclause100	# comment
-nlp	sent400	# comment
-nlp	qsent100	# comment
-nlp	sent_pos	# comment
-nlp	clause_pos	# comment
-nlp	CYCLE_2	# comment
-nlp	qclause300	# comment
-nlp	anaphora100	# comment
-nlp	sentsem	# comment
-nlp	clausesem	# comment
-nlp	inclausesem	# comment
-nlp	hilite_undone	# comment
-nlp	hilite_pos	# comment
-nlp	hilite_postag	# comment
-nlp	hilite_np	# comment
-nlp	hilite_ne	# comment
-nlp	hilite_temporal	# comment
-nlp	hilite_spatial	# comment
-nlp	hilite_clause	# comment
-nlp	pos_out	# comment
-nlp	pos_out_noscore	# comment
-nlp	poserr	# comment
-nlp	rule_out	# comment
-nlp	trav_dict	# comment
-nlp	xmlrecursive	# comment
-nlp	ne_out	# comment
-nlp	ne_xml	# comment
-nlp	fin	# comment
-nlp	buff_out	# comment
-nlp	displayKB	# comment
+nlp	doc	# Analyzer documentation: what Parse_EN-US does and what its node variables mean
+nlp	funs	# Declare the miscellaneous helper functions
+nlp	KBFuncs	# Declare the knowledge base display and dump functions
+nlp	posfuns	# Declare the part-of-speech helper functions
+nlp	semfuns	# Declare the general semantic functions
+nlp	qsemfuns	# Declare the query and interrogative semantic functions
+nlp	domfuns	# Declare the functions built for this domain and task
+nlp	xmlfns	# Declare the convenience functions for XML output
+nlp	ini	# Set the globals and switches that steer the run: verbose, hilite, pretagged
+nlp	kbload	# Declare the dictionary helpers and load general knowledge into the knowledge base
+nlp	kb_geo	# Load the knowledge base with geographic knowledge
+nlp	kb_onto	# Build the ontology in the knowledge base
+nlp	tag50	# Find the HTML comment tags, when HTML processing is turned on
+nlp	tag100	# A simple-minded look for the HTML tags
+nlp	tags100	# Pull the title and header zones out of the HTML tags
+nlp	zap100	# Zap the HTML tags out of the text
+nlp	LINES_nosp	# Segment the text into lines, for dicttokz analyzers
+nlp	pre_100	# Pre-tagged text: mark the comment and rule lines of the tagged input
+nlp	pre_200	# Pre-tagged text: clean the escaped and special characters out of the lines
+nlp	pre_300	# Pre-tagged text: split each token into its text and its part-of-speech tag
+nlp	pre_400	# Pre-tagged text: gather the tagged part-of-speech values
+nlp	pre_500	# Pre-tagged text: move the tag values onto the token nodes
+nlp	pre_600	# Pre-tagged text: look up the words inside the multi-token tags
+nlp	pre_zap	# Pre-tagged text: remove the comment lines and the line nodes
+nlp	pre_zap1	# Pre-tagged text: splice out the part-of-speech nodes
+nlp	pre_zap2	# Pre-tagged text: splice out the text nodes and remove the slashes
+nlp	pre_badeos	# Pre-tagged text: handle the bad blank lines in the tagged input
+nlp	pre_form	# Pre-tagged text: reform the lines between the blank lines and rules
+nlp	CYCLE_0	# Cycle 0 documentation: format processing and other preprocessing of the text
+nlp	qline100	# Examine the lines and characterize each one
+nlp	textzone50	# Merge the trailing lines into the specialized text zones
+nlp	textzone100	# Gather the remaining lines into text zones
+nlp	zaplines	# Get rid of the line nodes, leaving the text zones
+nlp	CYCLE_1	# Cycle 1 documentation: the high confidence standalone processes
+nlp	tok10	# Retokenize the artifacts of pre-tagged text, such as double dashes
+nlp	tok25	# Dissolve the token nodes that were marked for retokenizing
+nlp	tok50	# Token sleuthing: characterize the tokens before retokenizing
+nlp	quotes100	# Track what falls inside the double quotes
+nlp	tok100	# Some retokenization inside the text zone
+nlp	punct100	# Sort out the text punctuation: which periods end a sentence and which do not
+nlp	punct200	# More end-of-sentence handling and other punctuation work
+nlp	dom100	# Domain patterns in the text zone: stock symbols, titles, and the like
+nlp	fnretok	# Retokenize the contracted forms, as in won't and can't
+nlp	date	# Recognize the dates and times in the text zone
+nlp	feat	# Mark the word features, such as the words that only look like a verb plus -ed
+nlp	feat100	# Mark the mass, or noncount, nouns
+nlp	city	# Automatically generated rules matching the known city names
+nlp	country	# Automatically generated rules matching the known country names
+nlp	location100	# Named entity knowledge about locations
+nlp	fnword	# Recognize the function words and the idioms built on them
+nlp	num	# Recognize the numeric expressions: percentages, amounts, and the like
+nlp	common	# Common patterns over the numbers and function words
+nlp	dictfix	# Corrections to the dictionary for the words it gets wrong
+nlp	lookup_word	# Look each word up in the knowledge base dictionary
+nlp	lex_unambig	# Convert the unambiguous words straight to their part of speech
+nlp	tok150	# Retokenize now that the individual words have been looked at
+nlp	dom150	# A lexical, idiom, and domain-specific look at the tokens
+rec	tok175	# Retokenize inside a hyphenated token, as in 30-year-old
+nlp	entity100	# Recognize the named entities: people, organizations, and places
+nlp	tok200	# More retokenizing, and the part-of-speech work that goes with it
+nlp	lex_unambig2	# Convert the newly unambiguous words to their part of speech
+nlp	hilite_alpha	# Highlight the alphabetic tokens the parse has not touched
+nlp	dom175	# Build the capitalized phrases around a recognized named entity
+nlp	caps50	# Find the capitalized phrases in mixed-case prose
+nlp	incap100	# Work inside the capitalized phrases
+nlp	dom200	# Domain patterns over the recognized phrases
+nlp	sent50	# Find the new sentence breaks
+nlp	sent100	# Assign the text to sentences for the first time
+nlp	sent125	# Undo the end-of-sentence marker where it was wrong
+rec	pos10	# Local, high confidence part-of-speech tagging inside the sentence
+rec	inc100	# Incremental left-to-right passes over the sentence
+nlp	inc300	# More incremental left-to-right work on the sentence
+nlp	pos25	# Part-of-speech work before the recursive parsing starts
+rec	pos50	# The high confidence recursive grammar
+nlp	study100	# Study the text and generate rules from it
+nlp	pos75	# Part-of-speech fixes for the harder local contexts
+nlp	mhbv100	# Build the verb groups: modal, have, be, and the main verb
+nlp	dqan100	# Build the noun phrases: determiner, quantifier, adjective, noun
+nlp	phr50	# Align the verb groups across the conjoined and parallel phrases
+nlp	pos100	# Assign the part of speech from the surrounding context
+nlp	caps100	# Glom the capitalized phrases together
+rec	pos200	# More part-of-speech tagging, recursively
+nlp	dqan200	# More noun phrase building from determiner, quantifier, adjective, and noun
+nlp	pos300	# Part-of-speech work on the leading pieces of a sentence
+nlp	seg100	# Segment the sentence into chunks
+nlp	qseg100	# Go inside the segments and work on their contents
+nlp	sent200	# Compose the noun phrases and segments across the sentence
+nlp	qconj100	# Study the conjunctions in the sentence
+nlp	qseg125	# Resolve the segments that look like noun phrases
+nlp	qconj200	# Group the conjoined and comma-separated noun phrases
+rec	qsent50	# Look at the start of the sentence and build a verb group there
+rec	pos400	# Part-of-speech work now that the clauses are around it
+rec	qclause50	# Find the clause starts and the clause separations
+nlp	clause100	# Rough out the clauses of the sentence
+nlp	clause200	# Remove the temporary clause start nodes
+nlp	clause300	# Gather data about the clauses
+nlp	qseg150	# Resolve the segments in a clause that has no verb group
+nlp	sent250	# Merge the clauses split across a verb group
+nlp	clause400	# Join the split verb groups inside a clause
+nlp	sent300	# Count the clauses of the sentence and mark what kind it is
+nlp	qsent75	# Push what the clauses of a sentence still need into them
+rec	phr100	# Build noun phrases from the adjective and noun pairs in a clause
+nlp	qseg200	# Resolve the remaining segments into noun phrases
+nlp	qclause200	# Build the adverbials and normalize the question patterns
+nlp	qclause75	# Handle the there-is constructions inside a clause
+nlp	qclause100	# Go into a clause and work on its contents
+nlp	sent400	# Fix up the verb groups across the clauses of a sentence
+nlp	qsent100	# Look inside the sentences
+nlp	sent_pos	# Default part-of-speech tagging for whatever is left in a sentence
+nlp	clause_pos	# Default part-of-speech tagging for whatever is left in a clause
+nlp	CYCLE_2	# Cycle 2 documentation: the lower confidence processes built on earlier evidence
+nlp	qclause300	# Reason over the clauses and gather the evidence about them
+nlp	anaphora100	# Resolve the references that stay inside one sentence
+nlp	sentsem	# Register the sentences in the knowledge base
+nlp	clausesem	# Register the clauses in the knowledge base
+nlp	inclausesem	# Register the named entities of a clause as domain objects
+nlp	hilite_undone	# Highlight the alphas and segments that still carry no part of speech
+nlp	hilite_pos	# Highlight the stray nodes that ended up in no constituent
+nlp	hilite_postag	# Highlight every node that carries a part-of-speech tag
+nlp	hilite_np	# Highlight the noun phrases
+nlp	hilite_ne	# Highlight the named entities
+nlp	hilite_temporal	# Highlight the temporal expressions and register them in the clause
+nlp	hilite_spatial	# Highlight the location expressions and register them in the clause
+nlp	hilite_clause	# Highlight the clauses and report whether each is active or passive
+nlp	pos_out	# Output the part-of-speech tags, with the accuracy score
+nlp	pos_out_noscore	# Output the part-of-speech tags without scoring them
+nlp	poserr	# Highlight where the tagging disagrees with the pre-tagged text
+nlp	rule_out	# A sample pass showing how to output rules
+nlp	trav_dict	# A sample pass showing how to traverse the dictionary
+nlp	xmlrecursive	# Traverse the tree recursively and output the embedded tags
+nlp	ne_out	# Write the named entities of each clause out to a report
+nlp	ne_xml	# Output the resolved named entities from the knowledge base
+nlp	fin	# Cleanups: dump the part-of-speech scoring and close the report files
+nlp	buff_out	# Write the parse tree out as XML, to out.xml or to the output buffer
+nlp	displayKB	# Display the knowledge base built for the current text
