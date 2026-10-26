@@ -14989,6 +14989,7 @@ _xNIL <-
 # Note: May need semantic grounds, or at least trans/intr check.
 @PRE
 <2,2> varz("voice");
+<2,2> varz("pos50 psv20");	# Loop guard: fixvg may not set voice.
 <3,3> vareq("stem","to");
 @CHECK
   if (!vconjq(N(2),"-en"))
