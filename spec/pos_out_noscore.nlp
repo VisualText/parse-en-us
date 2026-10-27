@@ -78,16 +78,18 @@ if (!G("verbose"))  # Todo: another flag here.
 if (G("pretagged"))
   exitpass();
 
-if (L("con") = findconcept(findroot(),"pos"))	# 09/19/13 AM.
-  rmconcept(L("con"));	# CLEAR LIST FOR CURRENT DOC.	# 09/19/13 AM.
+# Once per document, not once per zone (see the zone line in analyzer.seq).
+if (!G("pos_out_noscore started"))
+  {
+  G("pos_out_noscore started") = 1;
+  if (L("con") = findconcept(findroot(),"pos"))	# 09/19/13 AM.
+    rmconcept(L("con"));	# CLEAR LIST FOR CURRENT DOC.	# 09/19/13 AM.
+  G("kbpos") = getconcept(findroot(),"pos");	# 09/16/13 AM.
+  if (G("treebank"))
+    printblurb("tags.txt");
+  }
 
-G("kbpos") = getconcept(findroot(),"pos");	# 09/16/13 AM.
-
-  
 G("para") = "======================================";
-
-if (G("treebank"))
-  printblurb("tags.txt");
 
 # Initialize traversal data.
 G("parseRoot") = pnroot();
@@ -96,6 +98,12 @@ G("depth")     = 0;
 G("path")      = 0;                     # Store the current path in the parse tree.
 L("newline") = 1;		# If on a new empty line.
 L("newpar") = 0;		# If at new paragraph.
+if (G("pos_out_noscore zones"))	# Carry on from the last zone.
+  {
+  L("newline") = G("pos_out_noscore newline");
+  L("newpar") = G("pos_out_noscore newpar");
+  }
+G("pos_out_noscore zones")++;
 
 while (G("node"))                       # Traverse the parse tree.
   {
@@ -261,6 +269,9 @@ while (G("node"))                       # Traverse the parse tree.
 	 }
   }
 
-postofile();	# 09/16/13 AM.
+G("pos_out_noscore newline") = L("newline");
+G("pos_out_noscore newpar") = L("newpar");
+
+# postofile() runs once, after the last zone, in docfin.
 @@CODE
 
