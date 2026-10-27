@@ -13,12 +13,17 @@ if (!G("num lines"))
 
 @NODES _ROOT
 
+# Stop at the first line of a new paragraph. A line like "1. Discretion..."
+# inside running prose made a zone that took every line to the end of the
+# book (War and Peace: 71% of it).
+@PRE
+<2,2> varz("PAR");
 @POST
   merge();
 @RULES
 _TEXTZONE <-
 	_TEXTZONE
-	_LINE [star]
+	_xWILD [star match=(_LINE)]
 	@@
 
 	
