@@ -103,13 +103,17 @@ spaces(L("num")) {
 
 @CODE
 
-if (interactive())
-	G("out") = "out.xml";
-else
-	G("out") = cbuf();
-
-G("id") = 1;
-xmlheader(G("out"));
+# Once per document, not once per zone (see the zone line in analyzer.seq).
+if (!G("buff_out started"))
+	{
+	G("buff_out started") = 1;
+	if (interactive())
+		G("out") = "out.xml";
+	else
+		G("out") = cbuf();
+	G("id") = 1;
+	xmlheader(G("out"));
+	}
 #xmlrecurseall(G("out"),pnroot(),0);
 eclXMLTree(G("out"),pnroot(),0);
 

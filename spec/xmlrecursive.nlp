@@ -256,6 +256,10 @@ if (!G("xml recursive"))
   exitpass();
 
 # Set up the recursion here.
+# Once per document, not once per zone (see the zone line in analyzer.seq).
+if (!G("xmlrecursive started"))
+{
+G("xmlrecursive started") = 1;
 G("oend") = 0;	# End offset of previously printed node.
 
 L("dir") = G("$apppath") + "\\data";
@@ -275,9 +279,7 @@ G("oxml") = openfile(L("fname"));
 xmlstart("doc",G("oxml"));
 xmlshort("input",G("$inputname"),G("oxml"));
 xmlshort("output",G("$inputhead")+".xml",G("oxml"));
+}
 xmlrecursion(pnroot(), 1, 0);
-xmlend("doc",G("oxml"));
-
-if (G("oxml"))
-  closefile(G("oxml"));
+# xmlend() and closefile() run once, after the last zone, in docfin.
 @@CODE

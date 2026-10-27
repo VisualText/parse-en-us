@@ -32,6 +32,7 @@ nlp	qline100	# Examine the lines and characterize each one
 nlp	textzone50	# Merge the trailing lines into the specialized text zones
 nlp	textzone100	# Gather the remaining lines into text zones
 nlp	zaplines	# Get rid of the line nodes, leaving the text zones
+zone	_TEXTZONE	# Run the passes below once per text zone (paragraph), freeing each one's tree after
 nlp	CYCLE_1	# Cycle 1 documentation: the high confidence standalone processes
 nlp	tok10	# Retokenize the artifacts of pre-tagged text, such as double dashes
 nlp	tok25	# Dissolve the token nodes that were marked for retokenizing
@@ -127,10 +128,12 @@ nlp	pos_out	# Output the part-of-speech tags, with the accuracy score
 nlp	pos_out_noscore	# Output the part-of-speech tags without scoring them
 nlp	poserr	# Highlight where the tagging disagrees with the pre-tagged text
 nlp	rule_out	# A sample pass showing how to output rules
-nlp	trav_dict	# A sample pass showing how to traverse the dictionary
 nlp	xmlrecursive	# Traverse the tree recursively and output the embedded tags
 nlp	ne_out	# Write the named entities of each clause out to a report
+nlp	buff_out	# Write the parse tree out as XML, to out.xml or to the output buffer
+endzone	nil	# Run the passes below once, after the last text zone
+nlp	docfin	# Finish the per-zone outputs: write pos.txt and close the embedded-tag XML
+nlp	trav_dict	# A sample pass showing how to traverse the dictionary
 nlp	ne_xml	# Output the resolved named entities from the knowledge base
 nlp	fin	# Cleanups: dump the part-of-speech scoring and close the report files
-nlp	buff_out	# Write the parse tree out as XML, to out.xml or to the output buffer
 nlp	displayKB	# Display the knowledge base built for the current text

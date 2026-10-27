@@ -130,11 +130,15 @@ while (L("count") > 0)
 if (!G("verbose"))
   exitpass();
 
-G("rout") = "rule.txt";
-G("rout") << "\n# Automatically gen'd rule file." << "\n";
-G("rout") << "@PATH _ROOT _TEXTZONE _sent" << "\n";
-# Keep it simple for now, with one rule region.
-G("rout") << "\n@RULES\n";
+# Once per document, not once per zone (see the zone line in analyzer.seq).
+if (!G("rout"))
+  {
+  G("rout") = "rule.txt";
+  G("rout") << "\n# Automatically gen'd rule file." << "\n";
+  G("rout") << "@PATH _ROOT _TEXTZONE _sent" << "\n";
+  # Keep it simple for now, with one rule region.
+  G("rout") << "\n@RULES\n";
+  }
 @@CODE
 
 #@PATH _ROOT _TEXTZONE _sent _clause

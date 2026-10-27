@@ -13,10 +13,14 @@ if (!G("verbose"))
 #mkdir(L("dir"));
 #L("fname") = L("dir") + "\\" + G("$inputname");
 #G("kout") = openfile(L("fname"));
-G("kout") = "clause_ne.txt";
-G("kout") << "PART   SEM          STEM          NE_TEXT       ALL_TEXT" << "\n"
-          << "========================================================" << "\n"
-		  ;
+# Once per document, not once per zone (see the zone line in analyzer.seq).
+if (!G("kout"))
+  {
+  G("kout") = "clause_ne.txt";
+  G("kout") << "PART   SEM          STEM          NE_TEXT       ALL_TEXT" << "\n"
+            << "========================================================" << "\n"
+		    ;
+  }
 @@CODE
 
 #@PATH _ROOT _TEXTZONE _sent _clause
