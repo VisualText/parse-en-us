@@ -25,7 +25,6 @@ jobs:
         repo:
           - analyzers           # embeds parse-en-us at path parse-en-us
           - analyzer-templates  # embeds parse-en-us at path parse-en-us
-          - visualtext-files    # embeds parse-en-us at path analyzers/parse-en-us
           - package-analyzers   # embeds parse-en-us at path parse-en-us
     steps:
       - name: Trigger ${{ matrix.repo }}
